@@ -47,7 +47,7 @@ class Registration(tk.Toplevel):
         self.Reg_pass_re.pack()
         self.Reg_btn = tk.Button(self,text="Sign up!")
         self.Reg_btn.place(x=90, y=130)
-        self.Cancel_btn=tk.Button(self, text="Cancel")
+        self.Cancel_btn=tk.Button(self, text="Cancel", command=self.destroy)
         self.Cancel_btn.place(x=170, y=130)
 
 
@@ -70,6 +70,8 @@ class About(tk.Toplevel):
         self.About_label.pack()
         self.About_label_2 = tk.Label(self, text="Soroka Dmitriy, 2020")
         self.About_label_2.pack()
+        self.Ok_btn = tk.Button(self, text="Ok", command=self.destroy)
+        self.Ok_btn.pack()
 
 
         self.grab_set()
