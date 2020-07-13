@@ -24,12 +24,31 @@ class Registration(tk.Toplevel):
 
     def init_Registration(self):
         self.title = ('Sign up')
-        self.geometry("300x150+400+300")
+        self.geometry("300x170+400+300")
         self.resizable(False, False)
+
+        self.Reg_label = tk.Label(self,text="Enter your nickname:")
+        self.Reg_label.pack()
+        self.Reg_nick = tk.Entry(self)
+        self.Reg_nick.pack()
+        self.Reg_label_pass = tk.Label(self,text="Enter your pasword:")
+        self.Reg_label_pass.pack()
+        self.Reg_pass = tk.Entry(self,show="*")
+        self.Reg_pass.pack()
+        self.Reg_label_pass_re = tk.Label(self,text="Enter your password again:")
+        self.Reg_label_pass_re.pack()
+        self.Reg_pass_re = tk.Entry(self,show="*")
+        self.Reg_pass_re.pack()
+        self.Reg_btn = tk.Button(self,text="Sign up!")
+        self.Reg_btn.place(x=90, y=130)
+        self.Cancel_btn=tk.Button(self, text="Cancel")
+        self.Cancel_btn.place(x=170, y=130)
 
 
         self.grab_set()
         self.focus_set()
+
+
 
 
 if __name__ == "__main__":
