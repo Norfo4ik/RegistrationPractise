@@ -7,14 +7,27 @@ class Main(tk.Frame):
         self.init_main()
 
     def init_main(self):
-        toolbar = tk.Frame(bd=2)
+        toolbar = tk.Frame(bg='ghost white', bd=2)
         toolbar.pack(side=tk.TOP, fill=tk.X)
 
-        btn_opn_signup = tk.Button(toolbar, text="Sign Up", command=self.open_signup, bd=0, compound=tk.TOP)
+        btn_opn_signup = tk.Button(toolbar, text="Sign Up", command=self.open_signup, bg='ghost white', bd=0, compound=tk.TOP)
         btn_opn_signup.pack(side=tk.LEFT)
 
-        btn_opn_about = tk.Button(toolbar, text="About", command=self.open_about, bd=0, compound=tk.TOP)
+        btn_opn_about = tk.Button(toolbar, text="About", command=self.open_about, bd=0, bg='ghost white', compound=tk.TOP)
         btn_opn_about.pack(side=tk.LEFT)
+
+        Sign_label=tk.Label(text="Enter your nickname:")
+        Sign_label.pack()
+        Sign_Entry=tk.Entry()
+        Sign_Entry.pack()
+        Sign_lable_pas=tk.Label(text="Enter your pasword:")
+        Sign_lable_pas.pack()
+        Sign_Entry_pas=tk.Entry(show="*")
+        Sign_Entry_pas.pack()
+        Sign_btn=tk.Button(text="Sign in!")
+        Sign_btn.place(x=70, y=120)
+        Cancel_btn=tk.Button(text="Cancel", command=quit)
+        Cancel_btn.place(x=130, y=120)
 
     def open_signup(self):
         Registration()
@@ -86,6 +99,6 @@ if __name__ == "__main__":
     app = Main(root)
     app.pack()
     root.title("Sign in")
-    root.geometry("350x200+300+200")
+    root.geometry("250x150+300+200")
     root.resizable(False, False)
     root.mainloop()
