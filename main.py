@@ -13,8 +13,14 @@ class Main(tk.Frame):
         btn_opn_signup = tk.Button(toolbar, text="Sign Up", command=self.open_signup, bd=0, compound=tk.TOP)
         btn_opn_signup.pack(side=tk.LEFT)
 
+        btn_opn_about = tk.Button(toolbar, text="About", command=self.open_about, bd=0, compound=tk.TOP)
+        btn_opn_about.pack(side=tk.LEFT)
+
     def open_signup(self):
         Registration()
+
+    def open_about(self):
+        About()
 
 
 class Registration(tk.Toplevel):
@@ -23,7 +29,7 @@ class Registration(tk.Toplevel):
         self.init_Registration()
 
     def init_Registration(self):
-        self.title = ('Sign up')
+        self.title = ("Sign up")
         self.geometry("300x170+400+300")
         self.resizable(False, False)
 
@@ -47,6 +53,28 @@ class Registration(tk.Toplevel):
 
         self.grab_set()
         self.focus_set()
+
+
+class About(tk.Toplevel):
+    def __init__(self):
+        super().__init__(root)
+        self.init_About()
+
+    def init_About(self):
+        self.title = ("About")
+        self.geometry("220x80+400+300")
+        self.resizable(False, False)
+
+
+        self.About_label=tk.Label(self,text="Sign in/Sign up program for practice")
+        self.About_label.pack()
+        self.About_label_2 = tk.Label(self, text="Soroka Dmitriy, 2020")
+        self.About_label_2.pack()
+
+
+        self.grab_set()
+        self.focus_set()
+
 
 
 
